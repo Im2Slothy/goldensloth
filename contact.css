@@ -1,0 +1,79 @@
+/*CSS For the Contact Page*/
+
+/* CSS For the Contact Page */
+
+body {
+    background-color: #ffffff; /* Change to white */
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 155, 0.4);
+    border: 1px solid #7289DA;
+    background-color: #000000; /* Change to black */
+}
+
+
+  
+  .contact-form {
+    background-color: rgb(0, 0, 0);
+  }
+
+  .form-control {
+    background-color: #36393F;
+    color: #ffffff;
+    border: 1px solid #7289DA;
+  }
+  
+  .form-control:focus {
+    box-shadow: none;
+    border-color: #7289DA;
+  }
+  
+  .btn-primary {
+    background-color: #7289DA;
+    border-color: #7289DA;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #5865F2;
+    border-color: #5865F2;
+  }
+  
+  .btn-primary:focus {
+    box-shadow: none;
+    border-color: #7289DA;
+  }
+  
+  .btn-primary:active {
+    background-color: #373B3E !important;
+    border-color: #373B3E !important;
+  }
+  
+  /* RGB Cyberpunk */
+  .rgb-cyberpunk {
+    background-color: #2a0080;
+    color: #ff00ea;
+    border-color: #ff00ea;
+  }
+  
+  .rgb-cyberpunk:hover {
+    background-color: #5000ff;
+    border-color: #5000ff;
+  }
+  
+  .form-label {
+    color: white;
+  }
+  .container h1 {
+    color: white;
+  }
