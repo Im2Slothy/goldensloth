@@ -87,7 +87,7 @@ function sendContact(event) {
         ]
       };
 
-      const webhookUrl = 'https://discordapp.com/api/webhooks/1146096022284685314/3bqwJtyOwCV7LyHp_u0BwYFCcogFO_ZyFMpG3QmAJu52fP6baNRDH0JqDUFypBh2Ri1A';
+      const webhookUrl = 'https://discordapp.com/api/webhooks/1146114680390172782/g08ebYvsViVLfbp6kDaSUJkPPBDCV1ypijEKzBzWG-hOY_BrWGgIsc1DxQZ5l4mIfAA0';
 
       fetch(webhookUrl, {
         method: 'POST',
