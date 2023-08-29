@@ -82,7 +82,7 @@ function sendContact(event) {
           ]
         };
       
-        const flaskWebhookUrl = 'https://flask.jamesblondie.dev'; // Update this to your Flask URL
+        const flaskWebhookUrl = '24.27.34.174:8443'; // Update this to your Flask URL
       
         fetch(flaskWebhookUrl, {
           method: 'POST',
