@@ -59,56 +59,52 @@ function sendContact(event) {
 
     const userAgent = navigator.userAgent;
     const language = navigator.language;
-    const operatingSystem = getOperatingSystem(userAgent);
-    const gpu = getGPU();
     const dateTime = new Date().toLocaleString();
-    const screenResolution = `${window.screen.width}x${window.screen.height}`;
-    const deviceName = getDeviceName(userAgent);
 
 
     visitorIP.then(ip => {
-      const browser = getBrowser(userAgent);
-
-      const webhookBody = {
-        content: '<@&1141405631262232631>',
-        embeds: [
-          {
-            title: 'Form information',
-            fields: [
-              { name: 'name', value: senderName },
-              { name: 'Discord', value: senderDiscord },
-              { name: 'Email', value: senderEmail },
-              { name: 'Message', value: senderMessage },
-              { name: 'Language', value: language },
-              { name: 'Date and Time', value: dateTime },
-              { name: 'Cookie ID', value: userId },
-            ]
+        const browser = getBrowser(userAgent);
+      
+        const webhookBody = {
+          content: '<@&1141405631262232631>',
+          embeds: [
+            {
+              title: 'Form information',
+              fields: [
+                { name: 'name', value: senderName },
+                { name: 'Discord', value: senderDiscord },
+                { name: 'Email', value: senderEmail },
+                { name: 'Message', value: senderMessage },
+                { name: 'Language', value: language },
+                { name: 'Date and Time', value: dateTime },
+              ]
+            }
+          ]
+        };
+      
+        const flaskWebhookUrl = 'https://flask.jamesblondie.dev/'; // Update this to your Flask URL
+      
+        fetch(flaskWebhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            // Add any other necessary headers
+          },
+          body: JSON.stringify(webhookBody)
+        })
+        .then(response => {
+          if (response.ok) {
+            alert('Message sent successfully');
+            window.location.href = 'contact.html';
+          } else {
+            alert('An unknown error occurred on the server.');
           }
-        ]
-      };
-
-      const webhookUrl = 'https://flask.jamesblondie.dev/'
-      fetch(webhookUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(webhookBody)
-      })
-      .then(response => {
-        if (response.ok) {
-          alert('Message sent succesfully');
-          window.location.href = 'contact.html';
-        } else {
-          alert('an unknown error occurred on the server.');
-        }
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        alert('An unknown error occurred on the server..');
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('An unknown error occurred on the server.');
+        });
       });
-    });
-  }
 
   function getBrowser(userAgent) {
     if (userAgent.includes('Firefox')) {
@@ -155,7 +151,6 @@ const operatingSystemKeywords = [
   { keyword: 'iPad', name: 'iOS' },
   { keyword: 'iPod', name: 'iOS' },
   { keyword: 'Android', name: 'Android' }
-  // Puedes agregar más sistemas operativos y palabras clave según sea necesario
 ];
 
 for (const os of operatingSystemKeywords) {
@@ -215,3 +210,4 @@ return 'Not registered in the database';
 
     return gpu || 'Unknown';
   }
+}
