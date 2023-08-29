@@ -14,7 +14,7 @@ body {
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
-    padding: 10px;
+    padding: 5px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 255, 155, 0.4);
     border: 1px solid #7289DA;
@@ -30,14 +30,14 @@ body {
 
 /* Adjust the height of the textarea */
 #messageInput {
-    height: 80px; /* Adjust the desired height */
+    height: 60px; /* Adjust the desired height */
 }
 
   .form-control {
     background-color: #36393F;
     color: #ffffff;
     border: 1px solid #7289DA;
-    height: 25px;
+    height: 20x;
   }
   
   .form-control:focus {
