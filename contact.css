@@ -1,82 +1,169 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="contact.css">
+/*CSS For the Contact Page*/
 
-  <title>Discord Contact Form</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <!-- reCAPTCHA Script -->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-</head>
-<body style="background-color:black;">
-  <div class="container mt-5" style="background-color: black;">
-    <h1>Contact Us!</h1>
-    <form onsubmit="sendContact(event)">
-      <div class="mb-3">
-        <label for="nameInput" class="form-label">Your name</label>
-        <input type="text" class="form-control" id="nameInput" required>
-      </div>
-      <div class="mb-3">
-        <label for="discordInput" class="form-label">Discord username:</label>
-        <input type="text" class="form-control" id="discordInput" required>
-      </div>
-      <div class="mb-3">
-        <label for="emailInput" class="form-label">Email:</label>
-        <input type="email" class="form-control" id="emailInput" required>
-      </div>
-      <div class="mb-3">
-        <label for="messageInput" class="form-label">Message:</label>
-        <textarea class="form-control" id="messageInput" rows="3" required></textarea>
-      </div>
-      <!-- reCAPTCHA Widget -->
-      <div class="g-recaptcha" data-sitekey="6LfIW-QnAAAAAGgyWwjnMb0f3peAtlcrEei_arAv"></div>
-      <button type="submit" class="btn btn-primary">Send message</button>
-      <a href="index.html" class="btn btn-secondary ms-2">cancel</a>
-    </form>
-  </div>
-  <script src="webhook.js"></script> <!-- Include your JavaScript file -->
-</body>
- <!-- Footer -->
-  <footer class="dark-bg">
-    <div class="container-fluid py-3">
-      <div class="row">
-        <div class="col-md-3">
-          <p class="text-white">Copyright ©2023 GoldenSloth Studios</p>
-        </div>
-        <div class="col-md-3">
-          <h6 class="text-uppercase font-weight-bold">Quick Links</h6>
-          <hr class="bg-secondary">
-          <ul class="list-unstyled">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQl">Payment</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="col-md-3">
-          <h6 class="text-uppercase font-weight-bold">Contact Us</h6>
-          <hr class="bg-secondary">
-          <p class="text-white">
-            Chicago, Illinois 12345 <br>
-            Phone: 555-555-5555 <br>
-            Email: slothy@slothy.com
-          </p>
-        </div>
-        <div class="col-md-3">
-          <h6 class="text-uppercase font-weight-bold">Follow Our Socials</h6>
-          <hr class="bg-secondary">
-          <p class="text-white">
-            <a href="https://www.instagram.com/instagram/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> <br>
-            <a href="https://www.youtube.com/@youtube" target="_blank"><i class="fab fa-youtube"></i> YouTube</a> <br>
-            <a href="https://www.tiktok.com/@Im2Slothy" target="_blank"><i class="fas fa-video"></i> TikTok</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </footer>
+/* CSS For the Contact Page */
+
+body {
+    background-color: #ffffff; /* Change to white */
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 155, 0.4);
+    border: 1px solid #7289DA;
+    background-color: #000000; /* Change to black */
+    margin-bottom: 240px; /* Add some margin at the bottom */
+}
+
+
   
-  <script src="webhook.js"></script> <!-- Include your JavaScript file -->
-</html>
+  .contact-form {
+    background-color: rgb(0, 0, 0);
+  }
+
+/* Adjust the height of the textarea */
+#messageInput {
+    height: 80px; /* Adjust the desired height */
+}
+
+  .form-control {
+    background-color: #36393F;
+    color: #ffffff;
+    border: 1px solid #7289DA;
+    height: 25px;
+  }
+  
+  .form-control:focus {
+    box-shadow: none;
+    border-color: #7289DA;
+  }
+  
+  .btn-primary {
+    background-color: #7289DA;
+    border-color: #7289DA;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #5865F2;
+    border-color: #5865F2;
+  }
+  
+  .btn-primary:focus {
+    box-shadow: none;
+    border-color: #7289DA;
+  }
+  
+  .btn-primary:active {
+    background-color: #373B3E !important;
+    border-color: #373B3E !important;
+  }
+  
+  /* RGB Cyberpunk */
+  .rgb-cyberpunk {
+    background-color: #2a0080;
+    color: #ff00ea;
+    border-color: #ff00ea;
+  }
+  
+  .rgb-cyberpunk:hover {
+    background-color: #5000ff;
+    border-color: #5000ff;
+  }
+  
+  .form-label {
+    color: white;
+  }
+  .container h1 {
+    color: white;
+  }
+
+/* Reset some default styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Center the content vertically and horizontally */
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+  }
+  
+  /* Style the payment section */
+  .payment-section {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Style the product image */
+  .product-image {
+    max-width: 150px;
+    margin-right: 20px;
+  }
+  
+  /* Style the product info */
+  .product-info {
+    flex: 1;
+  }
+  
+  .product-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .product-info p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* Style the product price */
+  .product-price {
+    font-size: 1.5rem;
+    color: #009688;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .payment-section {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .product-image {
+      margin: 0 auto 20px;
+    }
+  }
+
+
+/* Footer styles */
+/* Footer styles */
+.dark-bg {
+    background-color: #000000;
+    color: #d5d5d5;
+    padding-top: 0.1rem 0;
+    width: 100%;
+    text-align: center; /* Center the content horizontally */
+    clear: both; /* Clear any floated content */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    position: fixed; /* Position the footer at the bottom */
+    bottom: 0; /* Place it at the bottom of the viewport */
+    left: 0; /* Align it to the left */
+    z-index: 1000; /* Ensure it appears on top of other content */
+    font-size: 14px; /* Smaller font size */
+
+}
