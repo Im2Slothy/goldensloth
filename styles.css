@@ -1,180 +1,168 @@
+/*CSS For the Contact Page*/
+
+/* CSS For the Contact Page */
+
 body {
+    background-color: #ffffff; /* Change to white */
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
     margin: 0;
+    padding: 0;
 }
 
-.background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('background.png'); /* Adjust the path as needed */
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
+.container {
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 155, 0.4);
+    border: 1px solid #7289DA;
+    background-color: #000000; /* Change to black */
+    margin-bottom: 265px; /* Add some margin at the bottom */
 }
 
-.content {
-    padding: 40px;
+
+  
+  .contact-form {
+    background-color: rgb(0, 0, 0);
+  }
+
+  .form-control {
+    background-color: #36393F;
+    color: #ffffff;
+    border: 1px solid #7289DA;
+  }
+  
+  .form-control:focus {
+    box-shadow: none;
+    border-color: #7289DA;
+  }
+  
+  .btn-primary {
+    background-color: #7289DA;
+    border-color: #7289DA;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #5865F2;
+    border-color: #5865F2;
+  }
+  
+  .btn-primary:focus {
+    box-shadow: none;
+    border-color: #7289DA;
+  }
+  
+  .btn-primary:active {
+    background-color: #373B3E !important;
+    border-color: #373B3E !important;
+  }
+  
+  /* RGB Cyberpunk */
+  .rgb-cyberpunk {
+    background-color: #2a0080;
+    color: #ff00ea;
+    border-color: #ff00ea;
+  }
+  
+  .rgb-cyberpunk:hover {
+    background-color: #5000ff;
+    border-color: #5000ff;
+  }
+  
+  .form-label {
     color: white;
-    font-family: Arial, sans-serif;
-}
+  }
+  .container h1 {
+    color: white;
+  }
 
-/*The heading for the logo of Golden Sloth Studios Rahhhh*/
-.centered-heading {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    animation: fadeIn 2s ease-in-out forwards;
-    margin-bottom: 20px; 
-
-}
-
-.logo {
-    display: block;
-    margin: 20px auto; 
-    max-width: 100px; 
-}
-
-
-.main-heading {
-    font-size: 2.5em;
+/* Reset some default styles */
+body, h1, h2, p {
     margin: 0;
-}
-
-.sub-heading {
-    font-size: 2em;
-    margin: 10px 0;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translate(-50%, -60%);
-    }
-    100% {
-        opacity: 1;
-        transform: translate(-50%, -50%);
-    }
-}
-
-
-
-/* Now we finna make the first body part*/
-.photo-and-paragraph {
+    padding: 0;
+  }
+  
+  /* Center the content vertically and horizontally */
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+  }
+  
+  /* Style the payment section */
+  .payment-section {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
     display: flex;
     align-items: center;
-    margin-top: 40vh;
-    opacity: 0;
-}
-
-.photo-container {
-    flex: 1;
-    text-align: center;
-}
-
-.photo-container img {
-    max-width: 100%;
-    height: auto;
-}
-
-.paragraph-box {
-    flex: 1;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    border-radius: 10px;
-    margin-left: auto;
+  }
+  
+  /* Style the product image */
+  .product-image {
+    max-width: 150px;
     margin-right: 20px;
-}
-
-/* Add the fade-in animation using CSS only */
-.photo-and-paragraph.fade-in {
-    opacity: 1;
-    animation: fadeIn 2s ease-in-out forwards;
-}
-
-@keyframes fadeInDelayed {
-    0% {
-        opacity: 0;
-        transform: translateX(-50px);
+  }
+  
+  /* Style the product info */
+  .product-info {
+    flex: 1;
+  }
+  
+  .product-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .product-info p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* Style the product price */
+  .product-price {
+    font-size: 1.5rem;
+    color: #009688;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .payment-section {
+      flex-direction: column;
+      text-align: center;
     }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
+  
+    .product-image {
+      margin: 0 auto 20px;
     }
-}
-
-.about-us {
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    border-radius: 10px;
-    margin: 20px auto;
-    max-width: 80%; /* Adjust the width as needed */
-}
-.about-us {
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    border-radius: 10px;
-    margin: 20px auto;
-    max-width: 80%; /* Adjust the width as needed */
-
-    opacity: 0;
-    animation: fadeIn 2s ease-in-out forwards;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
+  }
 
 
-.about-us h3 {
-    font-size: 1.5em;
-    margin: 0;
-}
-
-.about-us p {
-    margin: 10px 0;
-}
-
-
-/*Footer*/
-footer {
-    background-color: #0b0b0b;
+/* Footer styles */
+/* Footer styles */
+.dark-bg {
+    background-color: #000000;
     color: #d5d5d5;
     padding-top: 2rem;
-  }
-  hr.light {
-    border-top: 1px solid #d5d5d5;
-    width: 75%;
-    margin-top: .8rem;
-    margin-bottom: 1rem;
-  }
-  footer a {
-    color: #d5d5d5;
-  }
-  hr.light-100 {
-    border-top: 1px solid #d5d5d5;
     width: 100%;
-    margin-top: .8rem;
-    margin-bottom: 1rem;
-  }
-  .footer-image img{
-    width: 150px;
-    height: 60px;
-  }
+    text-align: center; /* Center the content horizontally */
+    clear: both; /* Clear any floated content */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    position: fixed; /* Position the footer at the bottom */
+    bottom: 0; /* Place it at the bottom of the viewport */
+    left: 0; /* Align it to the left */
+    z-index: 0; /* Ensure it appears on top of other content */
+}
+
+
+  
   
 
 
+ 
