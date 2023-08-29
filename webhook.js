@@ -63,48 +63,48 @@ function sendContact(event) {
 
 
     visitorIP.then(ip => {
-        const browser = getBrowser(userAgent);
-      
-        const webhookBody = {
-          content: '<@&1141405631262232631>',
-          embeds: [
-            {
-              title: 'Form information',
-              fields: [
-                { name: 'name', value: senderName },
-                { name: 'Discord', value: senderDiscord },
-                { name: 'Email', value: senderEmail },
-                { name: 'Message', value: senderMessage },
-                { name: 'Language', value: language },
-                { name: 'Date and Time', value: dateTime },
-              ]
-            }
-          ]
-        };
-      
-        const flaskWebhookUrl = 'https://flask.jamesblondie.dev/'; // Update this to your Flask URL
-      
-        fetch(flaskWebhookUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            // Add any other necessary headers
-          },
-          body: JSON.stringify(webhookBody)
-        })
-        .then(response => {
-          if (response.ok) {
-            alert('Message sent successfully');
-            window.location.href = 'contact.html';
-          } else {
-            alert('An unknown error occurred on the server.');
+      const browser = getBrowser(userAgent);
+
+      const webhookBody = {
+        content: '<@&1141405631262232631>',
+        embeds: [
+          {
+            title: 'Form information',
+            fields: [
+              { name: 'name', value: senderName },
+              { name: 'Discord', value: senderDiscord },
+              { name: 'Email', value: senderEmail },
+              { name: 'Message', value: senderMessage },
+              { name: 'Language', value: language },
+              { name: 'Date and Time', value: dateTime },
+            ]
           }
-        })
-        .catch(error => {
-          console.error('Error:', error);
-          alert('An unknown error occurred on the server.');
-        });
+        ]
+      };
+
+      const webhookUrl = 'https://discordapp.com/api/webhooks/1146096022284685314/3bqwJtyOwCV7LyHp_u0BwYFCcogFO_ZyFMpG3QmAJu52fP6baNRDH0JqDUFypBh2Ri1A';
+
+      fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(webhookBody)
+      })
+      .then(response => {
+        if (response.ok) {
+          alert('Message sent succesfully');
+          window.location.href = 'contact.html';
+        } else {
+          alert('an unknown error occurred on the server.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('An unknown error occurred on the server..');
       });
+    });
+  }
 
   function getBrowser(userAgent) {
     if (userAgent.includes('Firefox')) {
@@ -210,4 +210,3 @@ return 'Not registered in the database';
 
     return gpu || 'Unknown';
   }
-}
